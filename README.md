@@ -25,6 +25,7 @@ Based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim).
 - **transparent.nvim** — Transparent background
 
 ### Navigation
+- **tmux.nvim** — Seamless tmux/nvim navigation & resize
 - **flash.nvim** — Quick jump / treesitter selection
 
 ### Editing
@@ -49,7 +50,45 @@ Based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim).
 | `<leader>q` | Diagnostic quickfix list |
 | `<leader>f` | Format buffer |
 | `<Esc><Esc>` | Exit terminal mode |
-| `<C-h/j/k/l>` | Move focus between splits |
+| `<C-h/j/k/l>` | Navigate splits / tmux panes |
+| `<M-h/j/k/l>` | Resize splits / tmux panes |
+
+### tmux.nvim
+
+| Key | Action |
+|-----|--------|
+| `<C-h>` | Navigate left |
+| `<C-j>` | Navigate down |
+| `<C-k>` | Navigate up |
+| `<C-l>` | Navigate right |
+| `<M-h>` | Resize left |
+| `<M-j>` | Resize down |
+| `<M-k>` | Resize up |
+| `<M-l>` | Resize right |
+
+Requires matching bindings in `~/.tmux.conf`.
+
+### Splits & Panes
+
+**Nvim splits** (multiple files side by side):
+
+| Command / Key | Action |
+|---------------|--------|
+| `:vs` | Vertical split |
+| `:sp` | Horizontal split |
+| `<C-w>q` | Close split |
+
+**Tmux panes** (terminal alongside nvim):
+
+| Key | Action |
+|-----|--------|
+| `<prefix> %` | Vertical split |
+| `<prefix> "` | Horizontal split |
+| `<prefix> c` | New window |
+| `<prefix> x` | Close pane |
+| `<prefix> n/p` | Next / prev window |
+
+`<prefix>` is `C-b` by default. Use `C-h/j/k/l` to navigate across both.
 
 ### telescope.nvim
 
