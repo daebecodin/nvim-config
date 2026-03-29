@@ -25,6 +25,10 @@ My personal Neovim configuration, based on [kickstart.nvim](https://github.com/n
 - **neogit** — Git interface (with diffview)
 - **markdown-preview.nvim** — Live markdown preview in browser
 - **project.nvim** — Auto-detect project root (`.git`, `Makefile`, `CMakeLists.txt`, `package.json`)
+- **transparent.nvim** — Transparent background
+  - `:TransparentEnable`
+  - `:TransparentDisable`
+  - `:TransparentToggle`
 - **vim-be-good** — Practice Vim motions (`:VimBeGood`)
 
 ## Setup
