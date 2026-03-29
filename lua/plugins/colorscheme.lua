@@ -10,7 +10,7 @@ return {
     ---@diagnostic disable-next-line: missing-fields
     require('onedarkpro').setup {
       styles = {
-        comments = { italic = false }, -- Disable italics in comments
+        comments = 'NONE',
       },
       colors = {},
     }
