@@ -24,6 +24,7 @@ My personal Neovim configuration, based on [kickstart.nvim](https://github.com/n
 - **neogit** — Git interface
 - **markdown-preview.nvim** — Live markdown preview in browser
 - **project.nvim** — Auto-detect project root
+- **vim-be-good** — Practice Vim motions (`:VimBeGood`)
 
 ## Setup
 
