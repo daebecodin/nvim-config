@@ -17,6 +17,6 @@ return {
   },
   cmd = 'Neogit',
   keys = {
-    { '<leader>gg', '<cmd>Neogit<cr>', desc = 'Show Neogit UI' },
+    { '<leader>gg', function() require('neogit').open({ cwd = vim.fn.systemlist('git -C ' .. vim.fn.expand('%:p:h') .. ' rev-parse --show-toplevel')[1] }) end, desc = 'Show Neogit UI' },
   },
 }
