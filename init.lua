@@ -159,6 +159,9 @@ vim.o.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.o.scrolloff = 10
 
+-- Enable cursor blinking (needed for Ghostty cursor smear shader)
+vim.opt.guicursor = 'n-v-c-sm:block-blinkwait500-blinkon200-blinkoff150,i-ci-ve:ver25-blinkwait500-blinkon200-blinkoff150,r-cr-o:hor20-blinkwait500-blinkon200-blinkoff150'
+
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if you wish to save the current file(s)
 -- See `:help 'confirm'`

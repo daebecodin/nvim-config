@@ -3,6 +3,7 @@ return {
   config = function()
     require('transparent').setup({
       extra_groups = {
+        'Normal',
         'NormalFloat',
         'NvimTreeNormal',
       },
