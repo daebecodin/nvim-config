@@ -1,79 +1,76 @@
 # nvim-config
 
-My personal Neovim configuration, based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim).
+Based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim).
 
 ## Plugins
 
-### Core (via kickstart)
-- **telescope.nvim** — Fuzzy finder for files, grep, buffers, LSP symbols, and more
-- **nvim-lspconfig** — LSP support with Mason for auto-installing servers
-- **blink.cmp** — Autocompletion with LuaSnip snippets
-- **conform.nvim** — Autoformatting (format on save, `stylua` for Lua)
-- **nvim-treesitter** — Syntax highlighting, indentation, and code understanding
-- **gitsigns.nvim** — Git signs in the gutter
-- **fidget.nvim** — LSP progress notifications
-- **mini.nvim** — Surround, text objects (ai), statusline
-- **which-key.nvim** — Keybinding hints (0ms delay)
-- **todo-comments.nvim** — Highlight TODOs in comments
-- **onedarkpro.nvim** — Colorscheme (`onedark_vivid`)
-- **guess-indent.nvim** — Auto-detect indentation
+### Core
+- **telescope.nvim** — Fuzzy finder
+- **nvim-lspconfig** — LSP support (Mason for auto-install)
+- **blink.cmp** — Autocompletion (LuaSnip)
+- **conform.nvim** — Autoformatting
+- **nvim-treesitter** — Syntax highlighting & indentation
+- **which-key.nvim** — Keybinding hints
 
-### Custom
-- **alpha-nvim** — Dashboard with custom ASCII art
-- **flash.nvim** — Quick navigation / treesitter selection
-- **neo-tree.nvim** — File tree (`\` to toggle)
+### Git
+- **gitsigns.nvim** — Git gutter signs
 - **neogit** — Git interface (with diffview)
-- **markdown-preview.nvim** — Live markdown preview in browser
-- **project.nvim** — Auto-detect project root (`.git`, `Makefile`, `CMakeLists.txt`, `package.json`)
+
+### UI
+- **alpha-nvim** — Dashboard
+- **neo-tree.nvim** — File tree
+- **onedarkpro.nvim** — Colorscheme
+- **fidget.nvim** — LSP progress notifications
+- **mini.nvim** — Surround, text objects, statusline
 - **transparent.nvim** — Transparent background
-  - `:TransparentEnable`
-  - `:TransparentDisable`
-  - `:TransparentToggle`
-- **vim-be-good** — Practice Vim motions (`:VimBeGood`)
 
-## Setup
+### Navigation
+- **flash.nvim** — Quick jump / treesitter selection
 
-```bash
-git clone https://github.com/daebecodin/nvim-config.git ~/.config/nvim
-nvim
-```
+### Editing
+- **guess-indent.nvim** — Auto-detect indentation
+- **todo-comments.nvim** — Highlight TODOs in comments
 
-Run `:Lazy sync` on first launch to install all plugins.
+### Tools
+- **markdown-preview.nvim** — Live markdown preview
+- **project.nvim** — Auto-detect project root
+- **vim-be-good** — Vim practice game
 
-## Keybindings
+---
+
+## Cheat Sheets
 
 ### General
 
 | Key | Action |
 |-----|--------|
-| `<space>` | Leader key |
+| `<Space>` | Leader |
 | `<Esc>` | Clear search highlights |
-| `<leader>q` | Open diagnostic quickfix list |
+| `<leader>q` | Diagnostic quickfix list |
 | `<leader>f` | Format buffer |
-| `<leader>th` | Toggle inlay hints |
-| `\\` | Toggle file tree |
+| `<Esc><Esc>` | Exit terminal mode |
 | `<C-h/j/k/l>` | Move focus between splits |
 
-### Search (Telescope)
+### telescope.nvim
 
 | Key | Action |
 |-----|--------|
-| `<leader>sf` | Search files |
-| `<leader>sg` | Search by grep |
-| `<leader>sw` | Search current word |
-| `<leader>sh` | Search help |
-| `<leader>sk` | Search keymaps |
-| `<leader>ss` | Search Telescope builtins |
-| `<leader>sd` | Search diagnostics |
+| `<leader>sf` | Files |
+| `<leader>sg` | Live grep |
+| `<leader>sw` | Grep current word (n, v) |
+| `<leader>sh` | Help tags |
+| `<leader>sk` | Keymaps |
+| `<leader>ss` | Telescope builtins |
+| `<leader>sd` | Diagnostics |
 | `<leader>sr` | Resume last search |
-| `<leader>s.` | Search recent files |
-| `<leader>sc` | Search commands |
-| `<leader>sn` | Search Neovim config files |
+| `<leader>s.` | Recent files |
+| `<leader>sc` | Commands |
+| `<leader>sn` | Neovim config files |
 | `<leader>s/` | Grep in open files |
-| `<leader>/` | Fuzzy search in current buffer |
-| `<leader><leader>` | Find open buffers |
+| `<leader>/` | Fuzzy search current buffer |
+| `<leader><leader>` | Open buffers |
 
-### LSP
+### nvim-lspconfig
 
 | Key | Action |
 |-----|--------|
@@ -83,41 +80,147 @@ Run `:Lazy sync` on first launch to install all plugins.
 | `grt` | Go to type definition |
 | `grD` | Go to declaration |
 | `grn` | Rename symbol |
-| `gra` | Code action |
+| `gra` | Code action (n, x) |
 | `gO` | Document symbols |
 | `gW` | Workspace symbols |
+| `<leader>th` | Toggle inlay hints |
 
-### Navigation (Flash)
+| Command | Action |
+|---------|--------|
+| `:Mason` | Manage LSP servers |
+| `:LspInfo` | Show active LSP clients |
+| `:LspRestart` | Restart LSP |
+
+Servers: `clangd`, `lua_ls` · Formatter: `stylua`
+
+### blink.cmp
 
 | Key | Action |
 |-----|--------|
-| `qt` | Flash jump |
-| `S` | Flash treesitter select |
-| `r` | Remote flash (operator-pending) |
-| `R` | Treesitter search (operator-pending/visual) |
-| `<C-s>` | Toggle flash in command-line search |
+| `<C-y>` | Accept completion |
+| `<C-space>` | Open menu / docs |
+| `<C-n>` / `<C-p>` | Next / prev item |
+| `<C-e>` | Hide menu |
+| `<C-k>` | Toggle signature help |
+| `<Tab>` / `<S-Tab>` | Navigate snippet stops |
 
-### Git
+### conform.nvim
+
+| Key | Action |
+|-----|--------|
+| `<leader>f` | Format buffer |
+
+| Command | Action |
+|---------|--------|
+| `:ConformInfo` | Show formatter info |
+
+Format on save enabled (except C/C++).
+
+### nvim-treesitter
+
+| Command | Action |
+|---------|--------|
+| `:TSUpdate` | Update all parsers |
+| `:TSInstall <lang>` | Install a parser |
+
+Parsers: `bash`, `c`, `cpp`, `diff`, `html`, `lua`, `luadoc`, `markdown`, `markdown_inline`, `query`, `vim`, `vimdoc`
+
+### flash.nvim
+
+| Key | Mode | Action |
+|-----|------|--------|
+| `qt` | n, x, o | Jump |
+| `S` | n, x, o | Treesitter select |
+| `r` | o | Remote flash |
+| `R` | o, x | Treesitter search |
+| `<C-s>` | c | Toggle flash search |
+
+### neo-tree.nvim
+
+| Key | Action |
+|-----|--------|
+| `\` | Toggle file tree |
+
+| Command | Action |
+|---------|--------|
+| `:Neotree reveal` | Open tree at current file |
+
+### neogit
 
 | Key | Action |
 |-----|--------|
 | `<leader>gg` | Open Neogit |
 
-## Languages
+| Command | Action |
+|---------|--------|
+| `:Neogit` | Open Neogit |
 
-- C/C++ (`clangd`)
-- Lua (`lua_ls`, `stylua`)
+### mini.nvim
 
-## Treesitter Parsers
+**Surround:**
 
-bash, c, cpp, diff, html, lua, luadoc, markdown, markdown_inline, query, vim, vimdoc
+| Example | Action |
+|---------|--------|
+| `saiw)` | Add `()` around word |
+| `sd'` | Delete surrounding `'` |
+| `sr)'` | Replace `)` with `'` |
 
-## Options
+**Text objects (ai):**
 
-- Relative line numbers
-- System clipboard sync
-- Persistent undo
-- Smart case search
-- Cursorline enabled
-- Scroll offset: 10
-- Live substitution preview
+| Example | Action |
+|---------|--------|
+| `va)` | Select around parens |
+| `yinq` | Yank inside next quote |
+| `ci'` | Change inside quotes |
+
+### alpha-nvim
+
+| Key | Action |
+|-----|--------|
+| `f` | Find file |
+| `e` | New file |
+| `r` | Recent files |
+| `t` | Find text |
+| `c` | Configuration |
+| `q` | Quit |
+
+### onedarkpro.nvim
+
+| Command | Action |
+|---------|--------|
+| `:colorscheme <name>` | Switch theme |
+
+Themes: `onedark`, `onelight`, `onedark_vivid` (active), `onedark_dark`, `vaporwave`
+
+### transparent.nvim
+
+| Command | Action |
+|---------|--------|
+| `:TransparentEnable` | Enable |
+| `:TransparentDisable` | Disable |
+| `:TransparentToggle` | Toggle |
+
+### markdown-preview.nvim
+
+| Command | Action |
+|---------|--------|
+| `:MarkdownPreview` | Start preview |
+| `:MarkdownPreviewStop` | Stop preview |
+| `:MarkdownPreviewToggle` | Toggle preview |
+
+### vim-be-good
+
+| Command | Action |
+|---------|--------|
+| `:VimBeGood` | Start practice game |
+
+---
+
+## Setup
+
+```bash
+git clone https://github.com/daebecodin/nvim-config.git ~/.config/nvim
+nvim
+```
+
+Run `:Lazy sync` on first launch.
