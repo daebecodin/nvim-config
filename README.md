@@ -281,6 +281,8 @@ Popup keymaps:
 
 Snippets stored in `~/.config/nvim/snippets/` (VS Code format).
 
+**Using a snippet:** Type the prefix in insert mode → `<C-n>`/`<C-p>` to select → `<C-y>` to insert → `<Tab>`/`<S-Tab>` to jump between placeholders.
+
 ---
 
 ## Setup

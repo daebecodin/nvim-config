@@ -1,6 +1,11 @@
 {
 	"contributes": {
-		"snippets": []
+		"snippets": [
+			{
+				"language": "cmake",
+				"path": "./cmake.json"
+			}
+		]
 	},
 	"name": "my-snippets"
 }
