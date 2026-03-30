@@ -258,8 +258,8 @@ Themes: `onedark`, `onelight`, `onedark_vivid` (active), `onedark_dark`, `vaporw
 
 | Key | Mode | Action |
 |-----|------|--------|
-| `<leader>se` | n | Edit snippet |
-| `<leader>sa` | n, x | Add new snippet (visual prefills body) |
+| `<leader>ne` | n | Edit snippet |
+| `<leader>na` | n, x | Add new snippet (visual prefills body) |
 
 | Command | Action |
 |---------|--------|
