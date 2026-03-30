@@ -25,7 +25,11 @@ return { -- Autocompletion
         --   end,
         -- },
       },
-      opts = {},
+      config = function()
+        require('luasnip.loaders.from_vscode').lazy_load {
+          paths = { vim.fn.stdpath('config') .. '/snippets' },
+        }
+      end,
     },
   },
   ---@module 'blink.cmp'

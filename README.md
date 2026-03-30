@@ -29,6 +29,7 @@ Based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim).
 - **flash.nvim** — Quick jump / treesitter selection
 
 ### Editing
+- **nvim-scissors** — Add/edit VS Code-style snippets
 - **guess-indent.nvim** — Auto-detect indentation
 - **todo-comments.nvim** — Highlight TODOs in comments
 
@@ -82,13 +83,13 @@ Requires matching bindings in `~/.tmux.conf`.
 
 | Key | Action |
 |-----|--------|
-| `<prefix> %` | Vertical split |
-| `<prefix> "` | Horizontal split |
+| `<prefix> %` | Split pane left/right (`Shift+5`) |
+| `<prefix> "` | Split pane top/bottom (`Shift+'`) |
 | `<prefix> c` | New window |
 | `<prefix> x` | Close pane |
 | `<prefix> n/p` | Next / prev window |
 
-`<prefix>` is `C-b` by default. Use `C-h/j/k/l` to navigate across both.
+`<prefix>` is `Ctrl+b` (press and release, then the next key). Use `C-h/j/k/l` to navigate across both.
 
 ### telescope.nvim
 
@@ -252,6 +253,33 @@ Themes: `onedark`, `onelight`, `onedark_vivid` (active), `onedark_dark`, `vaporw
 | Command | Action |
 |---------|--------|
 | `:VimBeGood` | Start practice game |
+
+### nvim-scissors
+
+| Key | Mode | Action |
+|-----|------|--------|
+| `<leader>se` | n | Edit snippet |
+| `<leader>sa` | n, x | Add new snippet (visual prefills body) |
+
+| Command | Action |
+|---------|--------|
+| `:ScissorsAddNewSnippet` | Add snippet |
+| `:ScissorsEditSnippet` | Edit snippet |
+
+Popup keymaps:
+
+| Key | Action |
+|-----|--------|
+| `<CR>` | Save changes |
+| `q` | Cancel |
+| `<BS>` | Back to search |
+| `<C-BS>` | Delete snippet |
+| `<C-d>` | Duplicate snippet |
+| `<C-o>` | Open in file |
+| `<C-p>` | Insert next placeholder |
+| `?` | Show help |
+
+Snippets stored in `~/.config/nvim/snippets/` (VS Code format).
 
 ---
 
