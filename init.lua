@@ -137,11 +137,46 @@ vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'c', 'cpp', 'javascript', 'java' },
   callback = function()
     vim.keymap.set('i', '<CR>', function()
+      local row = vim.api.nvim_win_get_cursor(0)[1] - 1
+      local col = vim.api.nvim_win_get_cursor(0)[2]
       local line = vim.api.nvim_get_current_line()
-      if line:match '^%s*/%*' or line:match '^%s*%*[^/]' or line:match '^%s*%*$' then
-        return '<CR> * '
+      local before = line:sub(1, col)
+      local after = line:sub(col + 1)
+
+      -- Only trigger inside block comments
+      if not (before:match '%s*/%*' or before:match '%s*%*') then
+        return '<CR>'
       end
-      return '<CR>'
+
+      -- Find the opening /* to get the base indent
+      local base_indent
+      for i = row, 0, -1 do
+        local l = vim.api.nvim_buf_get_lines(0, i, i + 1, false)[1]
+        if l:match '^(%s*)/%*' then
+          base_indent = l:match '^(%s*)'
+          break
+        end
+      end
+      if not base_indent then
+        return '<CR>'
+      end
+
+      local new_line = base_indent .. ' * '
+      local lines = { before }
+
+      if after:match '^%s*%*/' then
+        table.insert(lines, new_line)
+        table.insert(lines, base_indent .. ' ' .. vim.trim(after))
+      else
+        table.insert(lines, new_line .. vim.trim(after))
+      end
+
+      vim.schedule(function()
+        vim.api.nvim_buf_set_lines(0, row, row + 1, false, lines)
+        vim.api.nvim_win_set_cursor(0, { row + 2, #new_line })
+        vim.cmd 'startinsert!'
+      end)
+      return '<Ignore>'
     end, { buffer = true, expr = true })
   end,
 })
