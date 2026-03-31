@@ -119,6 +119,33 @@ vim.schedule(function() vim.o.clipboard = 'unnamedplus' end)
 -- Enable break indent
 vim.o.breakindent = true
 
+-- Default indentation: 4 spaces
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
+vim.o.softtabstop = 4
+vim.o.expandtab = true
+
+-- Don't auto-continue comments on new lines
+vim.api.nvim_create_autocmd('FileType', {
+  callback = function()
+    vim.opt_local.formatoptions:remove { 'c', 'r', 'o' }
+  end,
+})
+
+-- Auto-continue block comments only (not //)
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'c', 'cpp', 'javascript', 'java' },
+  callback = function()
+    vim.keymap.set('i', '<CR>', function()
+      local line = vim.api.nvim_get_current_line()
+      if line:match '^%s*/%*' or line:match '^%s*%*[^/]' or line:match '^%s*%*$' then
+        return '<CR> * '
+      end
+      return '<CR>'
+    end, { buffer = true, expr = true })
+  end,
+})
+
 -- Enable undo/redo changes even after closing and reopening a file
 vim.o.undofile = true
 
