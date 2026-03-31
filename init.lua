@@ -143,8 +143,8 @@ vim.api.nvim_create_autocmd('FileType', {
       local before = line:sub(1, col)
       local after = line:sub(col + 1)
 
-      -- Only trigger inside block comments
-      if not (before:match '%s*/%*' or before:match '%s*%*') then
+      -- Only trigger inside block comments, not on closing */
+      if line:match '^%s*%*/' or not (before:match '%s*/%*' or before:match '%s*%*') then
         return '<CR>'
       end
 
