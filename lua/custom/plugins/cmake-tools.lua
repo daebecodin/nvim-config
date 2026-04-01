@@ -1,0 +1,10 @@
+return {
+  'Civitasv/cmake-tools.nvim',
+  dependencies = 'nvim-lua/plenary.nvim',
+  opts = {
+    cmake_generate_options = { '-DCMAKE_EXPORT_COMPILE_COMMANDS=ON' },
+    cmake_regenerate_on_save = true,
+    cmake_build_directory = 'cmake-build-debug',
+  },
+  event = 'VeryLazy',
+}

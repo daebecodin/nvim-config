@@ -36,6 +36,7 @@ Based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim).
 - **tiny-inline-diagnostic.nvim** — Enhanced inline diagnostic display with multiline support
 
 ### Tools
+- **cmake-tools.nvim** — Auto CMake configure, build, run, and debug from Neovim
 - **markdown-preview.nvim** — Live markdown preview
 - **project.nvim** — Auto-detect project root
 - **vim-be-good** — Vim practice game
@@ -256,6 +257,19 @@ Themes: `onedark`, `onelight`, `onedark_vivid` (active), `onedark_dark`, `vaporw
 | `:TransparentDisable` | Disable |
 | `:TransparentToggle` | Toggle |
 
+### cmake-tools.nvim
+
+Auto-regenerates `compile_commands.json` on save of any `CMakeLists.txt`.
+
+| Command | Action |
+|---------|--------|
+| `:CMakeGenerate` | Run CMake configure |
+| `:CMakeBuild` | Build project |
+| `:CMakeRun` | Run executable |
+| `:CMakeDebug` | Debug executable |
+| `:CMakeSelectBuildType` | Switch Debug/Release |
+| `:CMakeSelectLaunchTarget` | Pick target to run |
+
 ### markdown-preview.nvim
 
 | Command | Action |
@@ -406,3 +420,6 @@ Run `:Lazy sync` on first launch.
 | `:ScissorsAddNewSnippet` | Add a snippet |
 | `:ScissorsEditSnippet` | Edit a snippet |
 | `:Alpha` | Open dashboard |
+| `:CMakeGenerate` | Run CMake configure |
+| `:CMakeBuild` | Build project |
+| `:CMakeRun` | Run executable |
