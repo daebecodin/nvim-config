@@ -32,6 +32,8 @@ Based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim).
 - **nvim-scissors** — Add/edit VS Code-style snippets
 - **guess-indent.nvim** — Auto-detect indentation
 - **todo-comments.nvim** — Highlight TODOs in comments
+- **spellwarn.nvim** — Inline spelling diagnostics via Neovim's built-in spellcheck
+- **tiny-inline-diagnostic.nvim** — Enhanced inline diagnostic display with multiline support
 
 ### Tools
 - **markdown-preview.nvim** — Live markdown preview
@@ -295,6 +297,38 @@ Popup keymaps:
 Snippets stored in `~/.config/nvim/snippets/` (VS Code format).
 
 **Using a snippet:** Type the prefix in insert mode → `<C-n>`/`<C-p>` to select → `<C-y>` to insert → `<Tab>`/`<S-Tab>` to jump between placeholders.
+
+### spellwarn.nvim
+
+Displays Neovim's built-in spell errors as LSP-style diagnostics with inline suggestions.
+
+| Key | Action |
+|-----|--------|
+| `]s` | Next misspelled word |
+| `[s` | Previous misspelled word |
+| `zg` | Add word to spellfile |
+| `zw` | Mark word as wrong |
+| `z=` | Show spelling suggestions |
+
+| Command | Action |
+|---------|--------|
+| `:Spellwarn enable` | Enable diagnostics |
+| `:Spellwarn disable` | Disable diagnostics |
+| `:Spellwarn toggle` | Toggle diagnostics |
+
+Spelling is set to `en_us`. Per-line disable: add `spellwarn:disable-next-line` above or `spellwarn:disable-line` at end of line.
+
+### tiny-inline-diagnostic.nvim
+
+Replaces Neovim's default virtual text diagnostics with a richer inline display. Multiline diagnostics and diagnostic counts are enabled.
+
+| Command | Action |
+|---------|--------|
+| `:TinyInlineDiag enable` | Enable inline diagnostics |
+| `:TinyInlineDiag disable` | Disable inline diagnostics |
+| `:TinyInlineDiag toggle` | Toggle inline diagnostics |
+| `:TinyInlineDiag toggle_cursor_only` | Only show diagnostics under cursor |
+| `:TinyInlineDiag toggle_all_diags_on_cursorline` | Show all diagnostics on cursor line |
 
 ---
 
