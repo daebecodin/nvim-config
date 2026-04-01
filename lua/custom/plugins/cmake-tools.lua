@@ -5,6 +5,8 @@ return {
     cmake_generate_options = { '-DCMAKE_EXPORT_COMPILE_COMMANDS=ON' },
     cmake_regenerate_on_save = true,
     cmake_build_directory = 'cmake-build-debug',
+    cmake_soft_link_compile_commands = true,
   },
-  event = 'VeryLazy',
+  ft = { 'cmake' },
+  cmd = { 'CMakeGenerate', 'CMakeBuild', 'CMakeRun', 'CMakeDebug', 'CMakeSelectLaunchTarget', 'CMakeSelectBuildType' },
 }

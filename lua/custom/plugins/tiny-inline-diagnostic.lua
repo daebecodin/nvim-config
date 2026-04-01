@@ -12,6 +12,7 @@ return {
           enabled = true,
           always_show = true,
         },
+        enable_on_insert = true,
       },
     }
     vim.diagnostic.config { virtual_text = false }
