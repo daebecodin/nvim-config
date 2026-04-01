@@ -388,12 +388,49 @@ Replaces Neovim's default virtual text diagnostics with a richer inline display.
 
 ## Setup
 
+### Prerequisites
+
+- **Neovim** >= 0.10
+- **Git**
+- A [Nerd Font](https://www.nerdfonts.com/) installed and set in your terminal
+- **gcc** or **clang** (for Treesitter parsers)
+- **ripgrep** — required for Telescope live grep (`brew install ripgrep` / `sudo apt install ripgrep`)
+- **make** — required for LuaSnip regex support
+
+### Optional (for C/C++ development)
+
+- **CMake** — for cmake-tools.nvim (`brew install cmake` / `sudo apt install cmake`)
+- **LLVM clangd** — recommended over Apple's bundled clangd for better LSP support (`brew install llvm`)
+  - If Homebrew LLVM is installed, the config auto-detects it; otherwise falls back to system clangd
+
+### Install
+
 ```bash
+# Back up existing config if needed
+mv ~/.config/nvim ~/.config/nvim.bak
+
+# Clone
 git clone https://github.com/daebecodin/nvim-config.git ~/.config/nvim
+```
+
+### First Launch
+
+```bash
 nvim
 ```
 
-Run `:Lazy sync` on first launch.
+1. Run `:Lazy sync` to install all plugins
+2. Run `:Mason` to verify LSP servers are installed (clangd, lua_ls, stylua)
+3. Run `:checkhealth` to verify everything is working
+
+### Uninstall
+
+```bash
+rm -rf ~/.config/nvim
+rm -rf ~/.local/share/nvim
+rm -rf ~/.local/state/nvim
+rm -rf ~/.cache/nvim
+```
 
 ## Quick Reference
 
