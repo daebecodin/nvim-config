@@ -348,6 +348,7 @@ rtp:prepend(lazypath)
 require('lazy').setup({
   { import = 'plugins' },
   require 'kickstart.plugins.neo-tree',
+  require 'kickstart.plugins.autopairs',
   { import = 'custom.plugins' },
 
 }, { ---@diagnostic disable-line: missing-fields
