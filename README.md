@@ -380,3 +380,29 @@ nvim
 ```
 
 Run `:Lazy sync` on first launch.
+
+## Quick Reference
+
+| Command | What it opens/does |
+|---------|--------------------|
+| `:Typr` | Typing practice |
+| `:TyprStats` | Typing statistics |
+| `:Neotree` | File tree |
+| `:Neogit` | Git interface |
+| `:Telescope` | Fuzzy finder |
+| `:Mason` | LSP server manager |
+| `:Lazy` | Plugin manager |
+| `:VimBeGood` | Vim practice game |
+| `:MarkdownPreview` | Live markdown preview |
+| `:MarkdownPreviewStop` | Stop markdown preview |
+| `:Spellwarn toggle` | Toggle spell diagnostics |
+| `:TinyInlineDiag toggle` | Toggle inline diagnostics |
+| `:LspInfo` | Show active LSP clients |
+| `:LspRestart` | Restart LSP |
+| `:ConformInfo` | Show formatter info |
+| `:TSUpdate` | Update Treesitter parsers |
+| `:TSInstall <lang>` | Install a Treesitter parser |
+| `:TransparentToggle` | Toggle transparent background |
+| `:ScissorsAddNewSnippet` | Add a snippet |
+| `:ScissorsEditSnippet` | Edit a snippet |
+| `:Alpha` | Open dashboard |
