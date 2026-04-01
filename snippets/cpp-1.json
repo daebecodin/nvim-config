@@ -1,0 +1,1 @@
+{"block-comment":{"prefix":"block-comment","body":["/*"," * "," */"]},"main":{"body":["int main() ","{","    return 0;","","}"],"prefix":"main"}}
