@@ -131,7 +131,20 @@ Requires matching bindings in `~/.tmux.conf`.
 | `:LspInfo` | Show active LSP clients |
 | `:LspRestart` | Restart LSP |
 
-Servers: `clangd`, `lua_ls` · Formatter: `stylua`
+Servers: `clangd` (C++20 default), `lua_ls` · Formatter: `stylua`
+
+#### Changing the C++ Standard
+
+The default C++ standard is **C++20**, set via `fallbackFlags` in `lua/plugins/lsp.lua`.
+
+To use a different standard (e.g. C++17) in a specific project, create a `.clangd` file in the project root:
+
+```yaml
+CompileFlags:
+  Add: [-std=c++17]
+```
+
+This overrides the default for that project only. Remove the file to go back to C++20.
 
 ### blink.cmp
 
