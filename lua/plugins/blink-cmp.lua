@@ -57,15 +57,7 @@ return { -- Autocompletion
       -- <c-k>: Toggle signature help
       --
       -- See :h blink-cmp-config-keymap for defining your own keymap
-      preset = 'none',
-      ['<S-CR>'] = { 'accept', 'fallback' },
-      ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
-      ['<C-n>'] = { 'select_next', 'fallback' },
-      ['<C-p>'] = { 'select_prev', 'fallback' },
-      ['<C-e>'] = { 'hide', 'fallback' },
-      ['<C-k>'] = { 'show_signature', 'hide_signature', 'fallback' },
-      ['<Tab>'] = { 'snippet_forward', 'fallback' },
-      ['<S-Tab>'] = { 'snippet_backward', 'fallback' },
+      preset = 'default',
 
       -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
       --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
