@@ -120,7 +120,12 @@ return {
     ---@type table<string, vim.lsp.Config>
     local servers = {
       clangd = {
-        cmd = { '/opt/homebrew/opt/llvm/bin/clangd', '--function-arg-placeholders=0' },
+        cmd = {
+          vim.fn.executable('brew') == 1
+              and vim.fn.system('brew --prefix llvm'):gsub('%s+$', '') .. '/bin/clangd'
+            or 'clangd',
+          '--function-arg-placeholders=0',
+        },
         init_options = {
           fallbackFlags = { '-std=c++20' },
         },
