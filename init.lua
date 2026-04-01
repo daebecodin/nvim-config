@@ -125,6 +125,9 @@ vim.o.shiftwidth = 4
 vim.o.softtabstop = 4
 vim.o.expandtab = true
 
+vim.o.spell = true
+vim.o.spelllang = 'en_us'
+
 -- Don't auto-continue comments on new lines
 vim.api.nvim_create_autocmd('FileType', {
   callback = function()
