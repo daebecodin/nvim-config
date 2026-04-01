@@ -39,6 +39,7 @@ Based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim).
 - **markdown-preview.nvim** — Live markdown preview
 - **project.nvim** — Auto-detect project root
 - **vim-be-good** — Vim practice game
+- **typr** — Typing practice with stats dashboard
 
 ---
 
@@ -268,6 +269,45 @@ Themes: `onedark`, `onelight`, `onedark_vivid` (active), `onedark_dark`, `vaporw
 | Command | Action |
 |---------|--------|
 | `:VimBeGood` | Start practice game |
+
+### typr
+
+| Command | Action |
+|---------|--------|
+| `:Typr` | Start typing practice |
+| `:TyprStats` | View typing statistics |
+
+Typr window keys:
+
+| Key | Action |
+|-----|--------|
+| `s` | Toggle symbols |
+| `n` | Toggle numbers |
+| `r` | Toggle random |
+| `3` | Set 3 lines (etc.) |
+
+TyprStats window keys:
+
+| Key | Action |
+|-----|--------|
+| `D` | Dashboard |
+| `H` | History |
+| `K` | Keystrokes |
+
+Config options (pass to `opts`):
+
+| Option | Default | Description |
+|--------|---------|-------------|
+| `mode` | `"words"` | `"words"` or `"phrases"` |
+| `winlayout` | `"responsive"` | `"responsive"`, `"horizontal"`, `"vertical"` |
+| `kblayout` | `"qwerty"` | Keyboard layout for stats |
+| `wpm_goal` | `130` | Target WPM on dashboard |
+| `numbers` | `false` | Include numbers |
+| `symbols` | `false` | Include symbols |
+| `random` | `false` | Randomize word order |
+| `phrases` | `nil` | Custom strings to practice |
+| `insert_on_start` | `false` | Auto-enter insert mode |
+| `on_attach` | `nil` | Callback on buffer create (e.g. disable autopairs) |
 
 ### nvim-scissors
 
