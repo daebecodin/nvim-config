@@ -120,6 +120,7 @@ return {
     ---@type table<string, vim.lsp.Config>
     local servers = {
       clangd = {
+        cmd = { '/opt/homebrew/opt/llvm/bin/clangd' },
         init_options = {
           fallbackFlags = { '-std=c++20' },
         },
