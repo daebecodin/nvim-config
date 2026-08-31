@@ -5,43 +5,62 @@ Based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim).
 ## Plugins
 
 ### Core
-- **telescope.nvim** — Fuzzy finder
-- **nvim-lspconfig** — LSP support (Mason for auto-install)
-- **blink.cmp** — Autocompletion (LuaSnip)
-- **conform.nvim** — Autoformatting
-- **nvim-treesitter** — Syntax highlighting & indentation
-- **which-key.nvim** — Keybinding hints
+- [**lazy.nvim**](https://github.com/folke/lazy.nvim) — Plugin manager
+- [**telescope.nvim**](https://github.com/nvim-telescope/telescope.nvim) — Fuzzy finder
+- [**nvim-lspconfig**](https://github.com/neovim/nvim-lspconfig) — LSP support
+- [**mason.nvim**](https://github.com/mason-org/mason.nvim) — External tool installer
+- [**mason-lspconfig.nvim**](https://github.com/mason-org/mason-lspconfig.nvim) — Mason and LSP integration
+- [**mason-tool-installer.nvim**](https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim) — Automatic Mason tool installation
+- [**blink.cmp**](https://github.com/saghen/blink.cmp) — Autocompletion
+- [**LuaSnip**](https://github.com/L3MON4D3/LuaSnip) — Snippet engine
+- [**conform.nvim**](https://github.com/stevearc/conform.nvim) — Autoformatting
+- [**nvim-treesitter**](https://github.com/nvim-treesitter/nvim-treesitter) — Syntax highlighting and indentation
+- [**which-key.nvim**](https://github.com/folke/which-key.nvim) — Keybinding hints
 
 ### Git
-- **gitsigns.nvim** — Git gutter signs
-- **neogit** — Git interface (with diffview)
+- [**gitsigns.nvim**](https://github.com/lewis6991/gitsigns.nvim) — Git gutter signs
+- [**neogit**](https://github.com/NeogitOrg/neogit) — Git interface
+- [**diffview.nvim**](https://github.com/sindrets/diffview.nvim) — Git diff and history views
+- [**baleia.nvim**](https://github.com/m00qek/baleia.nvim) — ANSI color support for Neogit output
 
 ### UI
-- **alpha-nvim** — Dashboard
-- **ascii.nvim** — ASCII art collection and browser for the dashboard
-- **neo-tree.nvim** — File tree
-- **onedarkpro.nvim** — Colorscheme
-- **fidget.nvim** — LSP progress notifications
-- **mini.nvim** — Surround, text objects, statusline
-- **transparent.nvim** — Transparent background
+- [**alpha-nvim**](https://github.com/goolord/alpha-nvim) — Dashboard
+- [**ascii.nvim**](https://github.com/MaximilianLloyd/ascii.nvim) — ASCII art collection and browser for the dashboard
+- [**neo-tree.nvim**](https://github.com/nvim-neo-tree/neo-tree.nvim) — File tree
+- [**onedarkpro.nvim**](https://github.com/olimorris/onedarkpro.nvim) — Colorscheme
+- [**fidget.nvim**](https://github.com/j-hui/fidget.nvim) — LSP progress notifications
+- [**mini.nvim**](https://github.com/nvim-mini/mini.nvim) — Surround, text objects, and statusline
+- [**transparent.nvim**](https://github.com/xiyaowong/transparent.nvim) — Transparent background
+- [**cord.nvim**](https://github.com/vyfor/cord.nvim) — Discord Rich Presence
 
 ### Navigation
-- **tmux.nvim** — Seamless tmux/nvim navigation & resize
-- **flash.nvim** — Quick jump / treesitter selection
+- [**tmux.nvim**](https://github.com/aserowy/tmux.nvim) — Seamless tmux/Neovim navigation and resizing
+- [**flash.nvim**](https://github.com/folke/flash.nvim) — Quick jump and Treesitter selection
+- [**project.nvim**](https://github.com/ahmedkhalf/project.nvim) — Automatic project-root detection
 
 ### Editing
-- **nvim-scissors** — Add/edit VS Code-style snippets
-- **guess-indent.nvim** — Auto-detect indentation
-- **todo-comments.nvim** — Highlight TODOs in comments
-- **spellwarn.nvim** — Inline spelling diagnostics via Neovim's built-in spellcheck
-- **tiny-inline-diagnostic.nvim** — Enhanced inline diagnostic display with multiline support
+- [**nvim-autopairs**](https://github.com/windwp/nvim-autopairs) — Automatic bracket and quote pairs
+- [**nvim-scissors**](https://github.com/chrisgrieser/nvim-scissors) — Add and edit VS Code-style snippets
+- [**guess-indent.nvim**](https://github.com/NMAC427/guess-indent.nvim) — Automatic indentation detection
+- [**todo-comments.nvim**](https://github.com/folke/todo-comments.nvim) — Highlight TODOs in comments
+- [**spellwarn.nvim**](https://github.com/ravibrock/spellwarn.nvim) — Inline spelling diagnostics
+- [**tiny-inline-diagnostic.nvim**](https://github.com/rachartier/tiny-inline-diagnostic.nvim) — Multiline inline diagnostics
 
 ### Tools
-- **cmake-tools.nvim** — Auto CMake configure, build, run, and debug from Neovim
-- **markdown-preview.nvim** — Live markdown preview
-- **project.nvim** — Auto-detect project root
-- **vim-be-good** — Vim practice game
-- **typr** — Typing practice with stats dashboard
+- [**cmake-tools.nvim**](https://github.com/Civitasv/cmake-tools.nvim) — CMake configure, build, run, and debug
+- [**markdown-preview.nvim**](https://github.com/iamcco/markdown-preview.nvim) — Live Markdown preview
+- [**vim-be-good**](https://github.com/ThePrimeagen/vim-be-good) — Vim practice game
+- [**typr**](https://github.com/nvzone/typr) — Typing practice with a statistics dashboard
+
+### Supporting Dependencies
+- [**plenary.nvim**](https://github.com/nvim-lua/plenary.nvim) — Shared Lua utility library
+- [**nui.nvim**](https://github.com/MunifTanjim/nui.nvim) — UI component library
+- [**nvim-web-devicons**](https://github.com/nvim-tree/nvim-web-devicons) — File and plugin icons
+- [**telescope-fzf-native.nvim**](https://github.com/nvim-telescope/telescope-fzf-native.nvim) — Native Telescope sorting
+- [**telescope-ui-select.nvim**](https://github.com/nvim-telescope/telescope-ui-select.nvim) — Telescope-backed selection menus
+- [**fzf-lua**](https://github.com/ibhagwan/fzf-lua) — Optional Neogit fuzzy finder
+- [**mini.pick**](https://github.com/nvim-mini/mini.pick) — Optional Neogit picker
+- [**volt**](https://github.com/nvzone/volt) — UI dependency for Typr
 
 ---
 
