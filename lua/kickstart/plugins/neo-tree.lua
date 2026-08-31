@@ -19,6 +19,10 @@ return {
   ---@type neotree.Config
   opts = {
     filesystem = {
+      filtered_items = {
+        visible = false,
+        hide_dotfiles = false,
+      },
       window = {
         mappings = {
           ['\\'] = 'close_window',
