@@ -18,6 +18,7 @@ Based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim).
 
 ### UI
 - **alpha-nvim** — Dashboard
+- **ascii.nvim** — ASCII art collection and browser for the dashboard
 - **neo-tree.nvim** — File tree
 - **onedarkpro.nvim** — Colorscheme
 - **fidget.nvim** — LSP progress notifications
@@ -241,6 +242,72 @@ Parsers: `bash`, `c`, `cpp`, `diff`, `html`, `lua`, `luadoc`, `markdown`, `markd
 | `c` | Configuration |
 | `q` | Quit |
 
+#### Dashboard ASCII art
+
+`ascii.nvim` is installed as an `alpha-nvim` dependency. Its Telescope extension
+is loaded automatically, so no setup command is required after startup.
+
+Browse the available art:
+
+```vim
+:Telescope ascii
+```
+
+The built-in popup browser is also available:
+
+```vim
+:lua require('ascii').preview()
+```
+
+The Telescope result displays the Lua path for each piece, for example:
+
+```lua
+ascii.art.anime.onepiece.luffy
+```
+
+To make a selection permanent, edit
+`lua/custom/plugins/alpha-nvim.lua` and change the header assignment:
+
+```lua
+dashboard.section.header.val = ascii.art.anime.onepiece.luffy
+```
+
+Save the file and restart Neovim. The browser is only needed when choosing new
+art; the configured selection is loaded automatically on every startup.
+
+#### Saved custom art
+
+Personal art is stored in `lua/custom/ascii_art.lua`. The saved Donkey Kong art
+can be activated with:
+
+```lua
+dashboard.section.header.val = require('custom.ascii_art').donkeykong
+```
+
+Add more custom pieces as named entries in that module:
+
+```lua
+return {
+  donkeykong = {
+    -- Existing saved art
+  },
+  my_new_art = {
+    'first line',
+    'second line',
+  },
+}
+```
+
+Then activate one with `require('custom.ascii_art').my_new_art`. Do not add
+personal art under `~/.local/share/nvim/lazy/ascii.nvim`; Lazy may overwrite
+that directory during plugin updates.
+
+The optional
+[`ascii-lua-table`](https://github.com/MaximilianLloyd/ascii-lua-table) utility
+converts plain-text art into a Lua string table. It requires Rust/Cargo. Put the
+art in a text file, run the utility as described in its README, and paste the
+generated table into `lua/custom/ascii_art.lua` under a unique name.
+
 ### onedarkpro.nvim
 
 | Command | Action |
@@ -441,6 +508,7 @@ rm -rf ~/.cache/nvim
 | `:Neotree` | File tree |
 | `:Neogit` | Git interface |
 | `:Telescope` | Fuzzy finder |
+| `:Telescope ascii` | Browse dashboard ASCII art |
 | `:Mason` | LSP server manager |
 | `:Lazy` | Plugin manager |
 | `:VimBeGood` | Vim practice game |
