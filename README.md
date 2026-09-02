@@ -103,6 +103,22 @@ Requires matching bindings in `~/.tmux.conf`.
 | `:sp` | Horizontal split |
 | `<C-w>q` | Close split |
 
+**Neovim tabs** (built-in Neovim feature — reminder only):
+
+Tabs are workspaces that can contain one or more windows/splits. The `+` beside a
+filename means that file has unsaved changes; it is not an add-tab button.
+
+| Command / Key | Action |
+|---------------|--------|
+| `:tabnew` | Create an empty tab |
+| `:tabedit <file>` | Open a file in a new tab |
+| `:tab split` | Open the current window in a new tab |
+| `gt` / `gT` | Go to the next / previous tab |
+| `<number>gt` | Go directly to a numbered tab |
+| `:tabs` | List open tabs |
+| `:tabclose` | Close the current tab |
+| `:tabonly` | Close all other tabs |
+
 **Tmux panes** (terminal alongside nvim):
 
 | Key | Action |
