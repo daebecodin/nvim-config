@@ -13,7 +13,7 @@ return { -- Highlight, edit, and navigate code
       'css',
       'diff',
       'html',
-      'javascript',
+      'javascript', -- also parses JSX
       'java',
       'lua',
       'luadoc',
@@ -21,6 +21,7 @@ return { -- Highlight, edit, and navigate code
       'markdown_inline',
       'python',
       'query',
+      'tsx',
       'typescript',
       'vim',
       'vimdoc',
