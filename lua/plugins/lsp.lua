@@ -17,6 +17,9 @@ return {
     'mason-org/mason-lspconfig.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',
 
+    -- Add completion and snippet capabilities to every language server.
+    'saghen/blink.cmp',
+
     -- Useful status updates for LSP.
     { 'j-hui/fidget.nvim', opts = {} },
   },
@@ -117,8 +120,30 @@ return {
     -- Enable the following language servers
     --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
     --  See `:help lsp-config` for information about keys and how to configure
+    local capabilities = require('blink.cmp').get_lsp_capabilities()
+
     ---@type table<string, vim.lsp.Config>
     local servers = {
+      html = {},
+
+      emmet_language_server = {
+        filetypes = {
+          'astro',
+          'css',
+          'eruby',
+          'html',
+          'htmlangular',
+          'htmldjango',
+          'javascriptreact',
+          'less',
+          'sass',
+          'scss',
+          'svelte',
+          'typescriptreact',
+          'vue',
+        },
+      },
+
       clangd = {
         cmd = {
           vim.fn.executable('brew') == 1
@@ -187,6 +212,7 @@ return {
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
     for name, server in pairs(servers) do
+      server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
       vim.lsp.config(name, server)
       vim.lsp.enable(name)
     end

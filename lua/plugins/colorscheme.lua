@@ -10,7 +10,18 @@ return {
     ---@diagnostic disable-next-line: missing-fields
     require('onedarkpro').setup {
       styles = {
+        types = 'italic',
+        methods = 'italic',
+        numbers = 'italic',
+        strings = 'italic',
         comments = 'NONE',
+        keywords = 'italic',
+        constants = 'italic',
+        functions = 'italic',
+        operators = 'italic',
+        variables = 'italic',
+        parameters = 'italic',
+        conditionals = 'italic',
       },
       colors = {},
     }

@@ -41,6 +41,7 @@ Based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim).
 ### Editing
 - [**nvim-autopairs**](https://github.com/windwp/nvim-autopairs) — Automatic bracket and quote pairs
 - [**nvim-scissors**](https://github.com/chrisgrieser/nvim-scissors) — Add and edit VS Code-style snippets
+- [**nvim-html-css**](https://github.com/Jezda1337/nvim-html-css) — CSS class and ID completion in HTML
 - [**guess-indent.nvim**](https://github.com/NMAC427/guess-indent.nvim) — Automatic indentation detection
 - [**todo-comments.nvim**](https://github.com/folke/todo-comments.nvim) — Highlight TODOs in comments
 - [**spellwarn.nvim**](https://github.com/ravibrock/spellwarn.nvim) — Inline spelling diagnostics
@@ -49,6 +50,7 @@ Based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim).
 ### Tools
 - [**cmake-tools.nvim**](https://github.com/Civitasv/cmake-tools.nvim) — CMake configure, build, run, and debug
 - [**markdown-preview.nvim**](https://github.com/iamcco/markdown-preview.nvim) — Live Markdown preview
+- [**live-preview.nvim**](https://github.com/brianhuster/live-preview.nvim) — Live browser preview for HTML, Markdown, AsciiDoc, and SVG
 - [**vim-be-good**](https://github.com/ThePrimeagen/vim-be-good) — Vim practice game
 - [**typr**](https://github.com/nvzone/typr) — Typing practice with a statistics dashboard
 
@@ -196,6 +198,16 @@ This overrides the default for that project only. Remove the file to go back to 
 | `<C-e>` | Hide menu |
 | `<C-k>` | Toggle signature help |
 | `<Tab>` / `<S-Tab>` | Navigate snippet stops |
+
+### nvim-html-css
+
+Provides class and ID completion from linked and inline stylesheets while editing HTML. It uses the existing `blink.cmp` LSP source and loads with its default HTML-only configuration.
+
+| Key / Command | Action |
+|---------------|--------|
+| `gd` | Go to a local CSS definition, then fall back to LSP definition |
+| `K` | Show local CSS documentation, then fall back to LSP hover |
+| `:HtmlCssPeek` | Open the CSS definition in an editable floating window |
 
 ### conform.nvim
 
@@ -379,6 +391,17 @@ Auto-regenerates `compile_commands.json` on save of any `CMakeLists.txt`.
 | `:MarkdownPreview` | Start preview |
 | `:MarkdownPreviewStop` | Stop preview |
 | `:MarkdownPreviewToggle` | Toggle preview |
+
+### live-preview.nvim
+
+Previews HTML (including CSS and JavaScript), Markdown, AsciiDoc, and SVG in the default browser. HTML previews update when the file is saved; the other supported formats update as you type.
+
+| Command | Action |
+|---------|--------|
+| `:LivePreview start` | Preview the current file |
+| `:LivePreview pick` | Select a file with Telescope and preview it |
+| `:LivePreview close` | Stop the preview server |
+| `:LivePreview help` | Show command help |
 
 ### vim-be-good
 
