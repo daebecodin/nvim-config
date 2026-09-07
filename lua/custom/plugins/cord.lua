@@ -11,17 +11,18 @@ return {
     --   icon = nil,
     -- },
 
-    -- display = {
-    --   theme = 'default', -- default, atom, catppuccin, minecraft, void, classic
+    display = {
+      theme = 'atom',
+      -- theme = 'minecraft',
     --   flavor = 'dark', -- dark, light, accent
     --   view = 'full', -- full, editor, asset, auto
     --   swap_fields = false,
     --   swap_icons = false,
-    -- },
+    },
 
     timestamp = {
       -- enabled = true,
-      reset_on_idle = true,
+      reset_on_idle = false,
       -- reset_on_change = false,
       -- shared = false,
     },
@@ -40,11 +41,10 @@ return {
     },
 
     text = {
-      -- Empty defaults keep activity details private unless overridden below.
-      default = '',
+      -- Keep project, directory, and file names private.
       workspace = 'In Neovim',
-      -- viewing = function(opts) return 'Viewing ' .. opts.filename end,
-      -- editing = function(opts) return 'Editing ' .. opts.filename end,
+      viewing = function(opts) return 'Viewing ' .. opts.name end,
+      editing = function(opts) return 'Editing ' .. opts.name end,
       -- file_browser = function(opts) return 'Browsing files in ' .. opts.name end,
       -- plugin_manager = function(opts) return 'Managing plugins in ' .. opts.name end,
       -- lsp = function(opts) return 'Configuring LSP in ' .. opts.name end,
