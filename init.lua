@@ -128,10 +128,19 @@ vim.o.expandtab = true
 vim.o.spell = true
 vim.o.spelllang = 'en_us'
 
--- Don't auto-continue comments on new lines
+-- Don't auto-continue comments on new lines by default.
 vim.api.nvim_create_autocmd('FileType', {
   callback = function()
     vim.opt_local.formatoptions:remove { 'c', 'r', 'o' }
+  end,
+})
+
+-- Continue /* ... */ comments when pressing Enter, but not line comments.
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'c', 'cpp', 'javascript', 'java' },
+  callback = function()
+    vim.opt_local.comments = 's1:/*,mb:*,ex:*/'
+    vim.opt_local.formatoptions:append 'r'
   end,
 })
 
