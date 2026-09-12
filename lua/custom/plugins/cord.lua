@@ -30,7 +30,7 @@ return {
     idle = {
       -- enabled = true,
       -- timeout = 300000, -- milliseconds
-      show_status = false,
+      show_status = true,
       -- ignore_focus = true,
       -- unidle_on_focus = true,
       -- smart_idle = true,
@@ -57,6 +57,19 @@ return {
       games = 'Playing a game',
       terminal = 'Using the terminal',
       dashboard = 'Home',
+    },
+
+    advanced = {
+      discord = {
+        reconnect = {
+          enabled = true,
+        },
+        sync = {
+          enabled = true,
+          mode = 'periodic',
+          interval = 12000,
+        },
+      },
     },
 
     -- buttons = {
