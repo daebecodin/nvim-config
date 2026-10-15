@@ -21,10 +21,11 @@ return {
     filesystem = {
       filtered_items = {
         visible = false,
-        hide_dotfiles = false,
+        hide_dotfiles = true,
       },
       window = {
         mappings = {
+          ['H'] = 'toggle_hidden',
           ['\\'] = 'close_window',
         },
       },

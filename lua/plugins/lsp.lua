@@ -24,6 +24,12 @@ return {
     { 'j-hui/fidget.nvim', opts = {} },
   },
   config = function()
+    vim.filetype.add {
+      extension = {
+        hlsl = 'hlsl',
+        hlsli = 'hlsl',
+      },
+    }
     -- Brief aside: **What is LSP?**
     --
     -- LSP is an initialism you've probably heard, but might not understand what it is.
@@ -125,6 +131,8 @@ return {
     ---@type table<string, vim.lsp.Config>
     local servers = {
       html = {},
+      cssls = {},
+      slangd = {},
 
       emmet_language_server = {
         filetypes = {
